@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mis Proyectos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mis Proyectos</h1>
+        <form id="add-project-form">
+            <input type="text" id="project-name" placeholder="Nombre del proyecto">
+            <input type="text" id="project-description" placeholder="Descripción del proyecto">
+            <input type="date" id="project-deadline" placeholder="Fecha límite">
+            <input type="text" id="project-team" placeholder="Equipo asignado">
+            <select id="project-status">
+                <option value="iniciado">Iniciado</option>
+                <option value="en-proceso">En Proceso</option>
+                <option value="finalizado">Finalizado</option>
+            </select>
+            <button type="submit">Agregar Proyecto</button>
+        </form>
+        <div id="project-list">
+            <!-- projects will be rendered here -->
+        </div>
+        <button id="filter-button">Filtrar por Estado</button>
+        <select id="filter-status">
+            <option value="all">Todos</option>
+            <option value="iniciado">Iniciado</option>
+            <option value="en-proceso">En Proceso</option>
+            <option value="finalizado">Finalizado</option>
+        </select>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
