@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proyectos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .project-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .project-details {
+            margin: 1rem 0;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .edit-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .edit-button:hover {
+            background-color: #0056b3;
+        }
+
+        .delete-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+
+        .status.iniciado { background-color: #ffc107; color: #000; }
+        .status.en-proceso { background-color: #17a2b8; color: #fff; }
+        .status.finalizado { background-color: #28a745; color: #fff; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gestión de Proyectos</h1>
+        <div class="user-section">
+            <span id="user-name"></span>
+            <button id="logout-button" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </header>
+    
+    <div class="main-container">
+        <aside class="sidebar">
+            <button id="add-project-button" onclick="location.href='add_project.html'">Agregar Proyecto</button>
+        </aside>
+        
+        <main>
+            <section id="project-management">
+                <div class="project-header">
+                    <h2>Lista de proyectos</h2>
+                    <div class="filter-section">
+                        <label for="filter-status">Filtrar por estado:</label>
+                        <select id="filter-status">
+                            <option value="all">Todos</option>
+                            <option value="iniciado">Iniciado</option>
+                            <option value="en-proceso">En Proceso</option>
+                            <option value="finalizado">Finalizado</option>
+                        </select>
+                        <button id="filter-button">Filtrar</button>
+                    </div>
+                </div>
+
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total de proyectos:</span>
+                        <span id="total-projects" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Iniciados:</span>
+                        <span id="iniciado-projects" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">En proceso:</span>
+                        <span id="en-proceso-projects" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Finalizados:</span>
+                        <span id="finalizado-projects" class="stat-value">0</span>
+                    </div>
+                </div>
+                
+                
+
+
+
+                <div id="project-list" class="accordion-container"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

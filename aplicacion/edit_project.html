@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Proyecto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Editar Proyecto</h1>
+        <button id="back-button" onclick="location.href='ppo.html'">Volver a la gestión</button>
+    </header>
+    <main>
+        <section id="edit-project-section">
+            <h2 id="project-title">Editar Proyecto</h2>
+            <form id="edit-project-form">
+                <!-- Campo oculto para almacenar el ID del proyecto -->
+                <input type="hidden" name="project-id" id="edit-project-id">
+
+                <div class="form-group">
+                    <label for="edit-name">Nombre del proyecto</label>
+                    <input type="text" name="name" id="edit-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-status">Estado</label>
+                    <select name="status" id="edit-status" required>
+                        <option value="iniciado">Iniciado</option>
+                        <option value="en-proceso">En Proceso</option>
+                        <option value="finalizado">Finalizado</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-description">Descripción del proyecto</label>
+                    <textarea name="description" id="edit-description" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-team">Equipo asignado</label>
+                    <input type="text" name="team" id="edit-team" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-deadline">Fecha de entrega</label>
+                    <input type="date" name="deadline" id="edit-deadline" required>
+                </div>
+                
+                <button type="submit">Actualizar Proyecto</button>
+            </form>
+        </section>
+    </main>
+    <script src="edit_script.js"></script>
+</body>
+</html>
